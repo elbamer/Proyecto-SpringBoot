@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Hello World!</title>
+</head>
+<body>
+<!--Indica que usaurio esta logueado-->
+<p>Bienvenido a tu entorno Usuario </p>
+
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<form th:action="@{/logout}" method="post"><!-- nos lleva al logado de la aplicacion-->
+    <input type="submit" value="Cerrar Sesion"/>
+</form>
+<!--nos redirige a la pagina administrador-->
+<h1><a th:href="@{/user}"> user</a></h1>
+
+
+<h2>Esta es una prueba   </h2>
+<div><a th:include="admin.html"> user</a></div>
+</body>
+</html>

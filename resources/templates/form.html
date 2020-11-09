@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>CRUD SPRING BOOT</title>
+	<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<div class="container mt-4">
+	<div cla>
+		<form th:action="@{/indexEmpleado}" th:object="${persona}" method="POST">
+			<div></div>
+			<div>
+				<div>
+					<label>ID</label> <input type="text" th:field="*{id}" />
+				</div>
+
+				<div>
+					<label>NOMBRE</label> <input type="text" th:field="*{name}" />
+				</div>
+				<div>
+					<label>TELEFONO</label> <input type="text" th:field="*{telefono}" />
+				</div>
+				<div>
+					<label>USER</label> <input type="text" th:field="*{username}"  />
+				</div>
+				<div>
+					<label>PASSWORD</label> <input type="text" th:field="*{password}" />
+				</div>
+			</div>
+			<div>
+				<input type="submit" value="Guardar" /> <a th:href="@{/listar}">Regresar</a>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
